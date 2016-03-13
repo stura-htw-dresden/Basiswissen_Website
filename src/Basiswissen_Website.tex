@@ -1,0 +1,83 @@
+\documentclass[10pt,a4paper,oneside]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{enumitem}
+\author{Sabine Loch\and Matthias Jakobi}
+\title{Basiswissen Website (Plone)}
+\usepackage{tikz}
+\usepackage{environ}
+\usepackage{sidecap}
+\usepackage{wrapfig}
+
+\makeatletter
+\newcommand{\LogoStuRaHTW}{
+    \input{../res/Logo_normal.pgf}
+}
+
+\newlist{tip}{enumerate}{1}
+\setlist[tip]{label=Tip: ,leftmargin=*}
+
+\newlist{hinweis}{enumerate}{1}
+\setlist[hinweis]{label=Hinweis: ,leftmargin=*}
+
+\setitemize{label=\usebeamerfont*{itemize item}%
+      \usebeamercolor[fg]{itemize item}
+        \usebeamertemplate{itemize item}}
+\lstset{
+    frame=tb, % draw a frame at the top and bottom of the code block
+    tabsize=2, % tab space width
+    showstringspaces=false, % don't mark spaces in strings
+    numbers=left, % display line numbers on the left
+    commentstyle=\color{green}, % comment color
+    keywordstyle=\color{blue}, % keyword color
+    stringstyle=\color{red} % string color
+}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=red,
+    linktoc=all
+}
+
+\setbeamertemplate{headline}
+{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=\paperwidth,ht=1.0ex,dp=1ex]{secsubsec}%
+            \vspace*{-4em}
+            \raggedleft
+            \hspace*{2em}%
+            {
+                    \scalebox{.08}{
+                        \LogoStuRaHTW{}
+                    }
+            }
+            %
+            \hspace*{2em}%
+        \end{beamercolorbox}%
+    }%
+}
+
+\begin{document}
+\maketitle
+\frame{
+    \frametitle{Quellen}
+    \begin{itemize}
+        \item Plone Nutzerhandbuch, Viet Schiele, \url{http://www.plone-nutzerhandbuch.de/}, Lizenz: Creative-Commons-Lizenz Namensnennung-Nicht-kommerziell-Weitergabe unter gleichen Bedingungen 2.0 Deutschland \url{http://creativecommons.org/licenses/by-nc-sa/2.0/de/}
+    \end{itemize}
+}
+\frame{\frametitle{Inhaltsverzeichnis}\tableofcontents}
+\input{../src/anmelden.tex}
+\input{../src/website_aufbau.tex}
+\input{../src/suche.tex}
+\input{../src/inhalte_hinzufuegen.tex}
+\input{../src/prozess_veroeffentlichung.tex}
+\input{../src/mein_ordner_einrichten.tex}
+
+\end{document}

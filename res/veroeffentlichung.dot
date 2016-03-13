@@ -1,0 +1,11 @@
+digraph veroeffentlichung {
+	referat[label="Referat"];
+	termin_beitrag[label="Termin/Beitrag"]
+	referat -> termin_beitrag [label="erstellt"]
+	referat_oea[label="Referat Öffentlichkeitsarbeit"]
+	termin_beitrag -> referat_oea[label="Zur Veröffentlichung einreichen", fontcolor=orange]
+	ext[label="Externe Veröffentlichung Plone\nund ggf. social media sites"]
+	referat_oea -> ext [label="Redaktionelle Änderungen"]
+	referat_oea -> ext [label="Prüfung Relevanz social media"]
+	referat_oea -> referat[label="Zurückweisen", fontcolor=red]
+}
